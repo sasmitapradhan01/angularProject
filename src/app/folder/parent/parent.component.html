@@ -1,0 +1,9 @@
+<p>parent works!</p>
+<input type="text" placeholder="Input text here" pInputText [(ngModel)]="parentData"/>
+<p-button label="Send to child" (onClick)="onButtonClick()"/> 
+
+
+
+
+child output is - {{childOutput}}
+<app-child [childInput]="childInput"    (childOutput)="onChildOutput($event)"></app-child>
