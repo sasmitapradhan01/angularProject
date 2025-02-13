@@ -1,0 +1,22 @@
+<!-- <p>provider-child1 works!</p> -->
+<div class="sizes"> 
+    <label for="provider_id">Provider id</label>
+    <input
+      type="text"
+      class="p-inputtext-lg"
+      pInputText
+      id="provider_id"
+      [(ngModel)]="provider_id"/>
+      <label for="provider_phone">Provider Phone</label>
+    <input type="text" class="p-inputtext-lg" pInputText id="provider_phone"
+    [(ngModel)]="provider_phone"/> 
+      <p-button label="Search" (onClick)="providerDetails()"/>
+      <app-provider-child2></app-provider-child2>
+  </div>
+  <br>
+
+  
+ 
+  
+ 
+

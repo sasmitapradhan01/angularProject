@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 import { CommonService } from './common.service';
-
+import { MenuItem } from 'primeng/api';
 @Component({
     selector: 'app-root',
     standalone: false,
@@ -13,6 +13,7 @@ import { CommonService } from './common.service';
     styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
+    items: MenuItem[] | undefined;
     // title = 'primeng-quickstart';
 
     // @ViewChild('charging') chargingElement!: ElementRef;
@@ -47,12 +48,13 @@ export class AppComponent implements OnInit{
     //     this.isAnimationRunning = true;
    // }
    childOutput:string='';
-   constructor(private commonService:CommonService){}
+   constructor(private commonService:CommonService,private router: Router){}
 
    ngOnInit(): void {
        this.commonService.commonMessage.subscribe(m=>{
         this.childOutput = m;
        })
-   }
+
+    }
 
 }
