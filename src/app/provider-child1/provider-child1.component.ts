@@ -1,6 +1,7 @@
 import { Component, Injector, NgZone, OnInit } from '@angular/core';
 import { ProviderService } from '../provider.service';
 import { Router } from '@angular/router';
+import { Provider } from '../provider';
 
 @Component({
   selector: 'app-provider-child1',
@@ -11,10 +12,8 @@ import { Router } from '@angular/router';
 export class ProviderChild1Component{
   provider_id : string = '';
   provider_phone : string = '';
-  constructor(private providerService:ProviderService,private router: Router,
-    private injector:Injector, public zone: NgZone
-  ){ this.zone.run(() => {  this.router.navigate(['/create-provider']); });}
-
+  provider: Provider = new Provider();
+  constructor(private providerService:ProviderService){}
   providerDetails(){
     if(this.provider_id === '') return;
     this.providerService.getProviderById(this.provider_id)

@@ -2,27 +2,15 @@
 <div class="sizes"> 
     <!--<span *ngFor="let provider of results"-->
         <!--{{provider.Provider_name}}-->
-        <form (ngSubmit)="updateProvider()">
-    <label for="provider_name">Provider Name</label>
-    <input
-      type="text"
-      class="p-inputtext-lg"
-      id = "provider_name" name="provider_name"
-      pInputText
-      [(ngModel)]="provider.Provider_name"/> <br>
-      <label for="provider_address">Provider Address</label>
-    <input type="text" class="p-inputtext-lg" pInputText id="provider_address" name="provider_address" [(ngModel)]="provider.Provider_addr"/> 
-    <br>
-    <label for="provider_email">Provider email</label>
-    <input
-      type="text"
-      class="p-inputtext-lg"
-      id="provider_email" name="provider_email"
-      pInputText [(ngModel)]="provider.Provider_email"/> 
-      <br>
-   
-      <p-button label="Save" type="submit"/>
-      <p-button label="Cancel" />
+  <form (ngSubmit)="updateProvider()">
+    <label for="provider_name" style="margin-right: 48px">Provider Name</label>
+    <input type="text" class="p-inputtext-lg" id = "provider_name" name="provider_name" pInputText [(ngModel)]="provider.Provider_name"/> <br>
+    <label for="provider_address" style="margin-right: 35px">Provider Address</label>
+    <input type="text" class="p-inputtext-lg" pInputText id="provider_address" name="provider_address" [(ngModel)]="provider.Provider_addr"/><br>
+    <label for="provider_email" style="margin-right: 50px">Provider email</label>
+    <input type="text" class="p-inputtext-lg" id="provider_email" name="provider_email" pInputText [(ngModel)]="provider.Provider_email"/><br><br>
+    <p-button label="Save" type="submit" class="button"/>
+    <p-button label="Cancel" />
     </form>
   </div>
   
